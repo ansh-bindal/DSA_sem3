@@ -44,8 +44,8 @@ d->next=e;
 e->prev=d;
 node* head=a;
 if(check(head))
-cout<<"Palindrome\n";
+cout<<"True\n";
 else
-cout<<"Not a Palindrome\n";
+cout<<"False\n";
 return 0;
 }
