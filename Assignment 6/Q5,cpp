@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+class node{
+public:
+int data;
+node* next;
+node(int d=0){
+data=d;
+next=NULL;
+}
+};
+
+bool check(node* &head){
+if(head==NULL)return true;
+node* temp=head->next;
+while(temp!=NULL&&temp!=head)
+temp=temp->next;
+if(temp==head)
+return true;
+else
+return false;
+}
+
+int main(){
+node* a=new node(2);
+node* b=new node(4);
+node* c=new node(6);
+node* d=new node(7);
+node* e=new node(5);
+a->next=b;
+b->next=c;
+c->next=d;
+d->next=e;
+e->next=a;
+node* head=a;
+if(check(head))
+cout<<"True\n";
+else
+cout<<"False\n";
+return 0;
+}
